@@ -1,0 +1,19 @@
+    
+    override func start() {
+        guard !isCancelled else {
+            state = .finished
+            return
+        }
+        
+        main()
+        state = .executing
+    }
+}
+
+
+
+struct OperationUsageView: View {
+    
+    @ObservedObject private var model = OperationUsage()
+    
+    var body: some View {
